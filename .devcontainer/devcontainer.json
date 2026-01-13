@@ -1,0 +1,36 @@
+{
+  "name": "LeetCode Multi-Language Environment",
+  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installMaven": true,
+      "installGradle": false
+    },
+   "ghcr.io/devcontainers-extra/features/apt-get-packages:1": {
+  "packages": "g++,gcc,make,cmake"
+}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",                  // Python support
+        "ms-vscode.cpptools",                // C++ IntelliSense and debugging
+        "ms-vscode.vscode-typescript-tslint-plugin",  // JS/TS support (VS Code has built-in JS, but this enhances)
+        "ms-vscode-remote.remote-containers", // For Codespaces
+        "github.vscode-pull-request-github",  // PR reviews
+        "ms-vsliveshare.vsliveshare",         // Live Share for collab
+        "redhat.java",                        // Java support if needed
+        "leizongmin.node-module-intellisense" // Extra JS module help
+      ]
+    }
+  },
+  "postCreateCommand": "pip install pytest && npm install -g jest && echo 'Setup complete!'"
+  // Optional: Install language-specific testing tools (pytest for Python, jest for JS, etc.)
+}
